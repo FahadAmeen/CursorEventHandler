@@ -1,4 +1,6 @@
-﻿namespace CursorEventHandler
+﻿using System.Windows.Forms;
+
+namespace CursorEventHandler
 {
     partial class Form1
     {
@@ -80,6 +82,10 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            // this.StartPosition = FormStartPosition.CenterScreen;
+            this.Top = 0;
+            this.TopMost = true;
+            this.Show();
             this.ResumeLayout(false);
             this.PerformLayout();
 

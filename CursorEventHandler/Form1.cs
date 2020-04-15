@@ -43,8 +43,9 @@ namespace CursorEventHandler
                     int.Parse(InputValues.GetValueIf("Move_Cursor_to_Y_Axis_If")));
                 MouseEventHandler.Delay(int.Parse(InputValues.GetValueIf("Delay_1_If")));
                 // MessageBox.Show("Ok");
+                MouseEventHandler.GetColor();
             }
-            if(InputValues.GetValueIf("(Required_Pixel_Color_If"))
+            // if(InputValues.GetValueIf("Required_Pixel_Color_If")==)
         }
 
         private void button1_Click(object sender, EventArgs e)
