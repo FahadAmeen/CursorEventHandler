@@ -1,0 +1,38 @@
+{
+    "if": {
+        "Value_1_If": 0.00050,
+        "1_Click_Left_Button_X_Axis_If": 245,
+        "1_Click_Left_Button_Y_Axis_If": 180,
+        "Move_Cursor_to_X_Axis_If": 231,
+        "Move_Cursor_to_Y_Axis_If": 232,
+        "Required_Pixel_Color_If": "e5f1fb",
+        "Delay_1_If": 3,
+        "Delay_2_If": 2,
+        "3_Click_Right_Button_X_Axis_If": 600,
+        "3_Click_Right_Button_Y_Axis_If": 642,
+        "Delay_3_If": 2,
+        "4_Click_Left_Button_X_Axis_If": 600,
+        "4_Click_Left_Button_Y_Axis_If": 642,
+        "Delay_4_If": 6,
+        "5_Click_Left_Button_X_Axis_If": 600,
+        "5_Click_Left_Button_Y_Axis_If": 642
+    },
+    "else": {
+        "Value_1_Else": -0.00050,
+        "1_Click_Left_Button_X_Axis_Else": 345,
+        "1_Click_Left_Button_Y_Axis_Else": 180,
+        "Move_Cursor_to_X_Axis_Else": 231,
+        "Move_Cursor_to_Y_Axis_Else": 232,
+        "Required_Pixel_Color_Else": "e5f1fb",
+        "Delay_1_Else": 3,
+        "Delay_2_Else": 2,
+        "3_Click_Right_Button_X_Axis_Else": 700,
+        "3_Click_Right_Button_Y_Axis_Else": 642,
+        "Delay_3_Else": 2,
+        "4_Click_Left_Button_X_Axis_Else": 700,
+        "4_Click_Left_Button_Y_Axis_Else": 642,
+        "Delay_4_Else": 6,
+        "5_Click_Left_Button_X_Axis_Else": 700,
+        "5_Click_Left_Button_Y_Axis_Else": 642
+    }
+}
