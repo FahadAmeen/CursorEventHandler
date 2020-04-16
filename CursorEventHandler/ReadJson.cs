@@ -19,13 +19,14 @@ namespace CursorEventHandler
             JsonObject = JObject.Parse(File.ReadAllText("values.json"));
         }
 
-        public string GetValueIf(string key)    
+        public string GetValueIf(string key)
         {
-            return JsonObject.SelectToken("if."+key).Value<string>();
+            return JsonObject.SelectToken("if." + key).Value<string>();
         }
+
         public string GetValueElse(string key)
         {
-            return JsonObject.SelectToken("else."+key).Value<string>();
+            return JsonObject.SelectToken("else." + key).Value<string>();
         }
     }
 }

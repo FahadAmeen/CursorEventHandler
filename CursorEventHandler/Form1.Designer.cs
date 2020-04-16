@@ -90,7 +90,7 @@ namespace CursorEventHandler
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "MouseEventHandler";
             this.TopMost = true;
 
             this.Top = Screen.FromControl(this).Bounds.Top;
