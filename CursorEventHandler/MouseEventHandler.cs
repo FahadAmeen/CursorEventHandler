@@ -37,11 +37,25 @@ namespace CursorEventHandler
             mouse_event(MOUSEEVENTF_LEFTDOWN, xpos, ypos, 0, 0);
             mouse_event(MOUSEEVENTF_LEFTUP, xpos, ypos, 0, 0);
         }
+        public static void LeftMouseClick()
+        {
+            var position= Control.MousePosition;
+            mouse_event(MOUSEEVENTF_LEFTDOWN, position.X, position.Y, 0, 0);
+            mouse_event(MOUSEEVENTF_LEFTUP, position.X, position.Y, 0, 0);
+        }
+
         public static void RightMouseClick(int xpos, int ypos)
         {
             SetCursorPos(xpos, ypos);
             mouse_event(MOUSEEVENTF_RIGHTDOWN, xpos, ypos, 0, 0);
             mouse_event(MOUSEEVENTF_RIGHTUP, xpos, ypos, 0, 0);
+        }
+
+        public static void RightMouseClick()
+        {
+            var position = Control.MousePosition;
+            mouse_event(MOUSEEVENTF_RIGHTDOWN, position.X, position.Y, 0, 0);
+            mouse_event(MOUSEEVENTF_RIGHTUP, position.X, position.Y, 0, 0);
         }
 
         public static string GetColor()
@@ -50,9 +64,7 @@ namespace CursorEventHandler
             uint pixel = GetPixel(hdc, Cursor.Position.X, Cursor.Position.Y);
             ReleaseDC(IntPtr.Zero, hdc);
             System.Drawing.Color color = System.Drawing.Color.FromArgb((int)pixel);
-            
-            MessageBox.Show($"{color.R:X2}{color.G:X2}{color.B:X2}");
-            return $"{color.R:X2}{color.G:X2}{color.B:X2}".ToLower();
+            return $"{color.R:X2}{color.G:X2}{color.B:X2}";
 
         }
         public static void Delay(int timeInSeconds)
