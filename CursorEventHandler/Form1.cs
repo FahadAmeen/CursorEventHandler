@@ -14,9 +14,9 @@ namespace CursorEventHandler
             InitializeComponent();
             textBox1.Text = @"0.00051";
             UserInput = double.Parse(textBox1.Text);
-            textBox1.TextChanged += TextBox1_TextChanged;
             _inputValues = new ReadJson();
-            Algorithum(UserInput);
+            Algorithm(UserInput);
+            textBox1.TextChanged += TextBox1_TextChanged;
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -30,11 +30,12 @@ namespace CursorEventHandler
         private void ValueChanged(object value)
         {
             double numb = double.Parse(value.ToString());
-            Algorithum(numb);
+            Algorithm(numb);
         }
 
-        private void Algorithum(double numb)
+        private void Algorithm(double numb)
         {
+            // getting values from the json file
             if (numb >= double.Parse(_inputValues.GetValueIf("Value_1_If")))
             {
                 MouseEventHandler.LeftMouseClick(int.Parse(_inputValues.GetValueIf("1_Click_Left_Button_X_Axis_If")),
