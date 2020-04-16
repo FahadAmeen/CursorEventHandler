@@ -12,10 +12,10 @@ namespace CursorEventHandler
         public Form1()
         {
             InitializeComponent();
-            textBox1.Text = @"0.00051";
+            textBox1.Text = @"-0.00051";
             UserInput = double.Parse(textBox1.Text);
             _inputValues = new ReadJson();
-            Algorithm(UserInput);
+            // Algorithm(UserInput);
             textBox1.TextChanged += TextBox1_TextChanged;
         }
 
@@ -65,7 +65,7 @@ namespace CursorEventHandler
                 else
                 {
                     // goto Delay_1_If;
-                    // MouseEventHandler.Delay(int.Parse(_inputValues.GetValueIf("Delay_1_If")));
+                    MouseEventHandler.Delay(int.Parse(_inputValues.GetValueIf("Delay_1_If")));
                 }
             }
             else if (numb <= double.Parse(_inputValues.GetValueElse("Value_1_Else")))
@@ -99,7 +99,7 @@ namespace CursorEventHandler
                 else
                 {
                     // goto Delay_1_Else;
-                    // MouseEventHandler.Delay(int.Parse(_inputValues.GetValueElse("Delay_1_Else")));
+                    MouseEventHandler.Delay(int.Parse(_inputValues.GetValueElse("Delay_1_Else")));
                 }
             }
         }
