@@ -18,7 +18,7 @@ namespace CursorEventHandler
             _userInput= double.Parse(textBox1.Text);
             textBox1.TextChanged += TextBox1_TextChanged;
             _inputValues=new ReadJson();
-            // Algo(_userInput);
+            Algo(_userInput);
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -41,10 +41,10 @@ namespace CursorEventHandler
                 MouseEventHandler.LeftMouseClick(int.Parse(_inputValues.GetValueIf("1_Click_Left_Button_X_Axis_If")), int.Parse(_inputValues.GetValueIf("1_Click_Left_Button_Y_Axis_If")));
                 MouseEventHandler.SetCursorPos(int.Parse(_inputValues.GetValueIf("Move_Cursor_to_X_Axis_If")),
                     int.Parse(_inputValues.GetValueIf("Move_Cursor_to_Y_Axis_If")));
+                Delay_1_If:
                 MouseEventHandler.Delay(int.Parse(_inputValues.GetValueIf("Delay_1_If")));
 
-
-                if (_inputValues.GetValueIf("Required_Pixel_Color_If") == MouseEventHandler.GetColor().ToLower())
+                if (String.Equals( _inputValues.GetValueIf("Required_Pixel_Color_If"),MouseEventHandler.GetColor(), StringComparison.OrdinalIgnoreCase))
                 {
                     MouseEventHandler.LeftMouseClick();
                     MouseEventHandler.Delay(int.Parse(_inputValues.GetValueIf("Delay_2_If")));
@@ -55,6 +55,10 @@ namespace CursorEventHandler
                     MouseEventHandler.LeftMouseClick(int.Parse(_inputValues.GetValueIf("5_Click_Left_Button_X_Axis_If")), int.Parse(_inputValues.GetValueIf("5_Click_Left_Button_Y_Axis_If ")));
 
                 }
+                else
+                {
+                    // goto Delay_1_If;
+                }
                 
             }
             else if (numb <= double.Parse(_inputValues.GetValueElse("Value_1_Else")))
@@ -62,10 +66,11 @@ namespace CursorEventHandler
                 MouseEventHandler.LeftMouseClick(int.Parse(_inputValues.GetValueElse("1_Click_Left_Button_X_Axis_Else")), int.Parse(_inputValues.GetValueElse("1_Click_Left_Button_Y_Axis_Else")));
                 MouseEventHandler.SetCursorPos(int.Parse(_inputValues.GetValueElse("Move_Cursor_to_X_Axis_Else")),
                     int.Parse(_inputValues.GetValueElse("Move_Cursor_to_Y_Axis_Else")));
+                Delay_1_Else:
                 MouseEventHandler.Delay(int.Parse(_inputValues.GetValueElse("Delay_1_Else")));
 
 
-                if (_inputValues.GetValueElse("Required_Pixel_Color_Else") == MouseEventHandler.GetColor().ToLower())
+                if (String.Equals(_inputValues.GetValueElse("Required_Pixel_Color_Else"), MouseEventHandler.GetColor(), StringComparison.OrdinalIgnoreCase))
                 {
                     MouseEventHandler.LeftMouseClick();
                     MouseEventHandler.Delay(int.Parse(_inputValues.GetValueElse("Delay_2_Else")));
@@ -75,6 +80,10 @@ namespace CursorEventHandler
                     MouseEventHandler.Delay(int.Parse(_inputValues.GetValueElse("Delay_4_Else")));
                     MouseEventHandler.LeftMouseClick(int.Parse(_inputValues.GetValueElse("5_Click_Left_Button_X_Axis_Else")), int.Parse(_inputValues.GetValueElse("5_Click_Left_Button_Y_Axis_Else ")));
 
+                }
+                else
+                {
+                    // goto Delay_1_Else;
                 }
             }
         }
